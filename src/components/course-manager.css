@@ -1,0 +1,6 @@
+.fixed-btn{
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    color: red;
+}
