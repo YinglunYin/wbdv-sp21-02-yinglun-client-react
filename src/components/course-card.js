@@ -10,6 +10,7 @@ const CourseCard = ({course, deleteCourse}) =>
                     title and make up the bulk of the card's content.</p>
                 <Link to="/courses/editor" className="btn btn-primary">{course.title}</Link>
                 <i onClick={() => deleteCourse(course)} className='fas fa-trash'></i>
+                
             </div>
         </div>
     </div>
