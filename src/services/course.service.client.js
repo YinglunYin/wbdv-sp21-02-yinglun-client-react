@@ -18,7 +18,7 @@ export const createCourse = (course) =>
             'content-type': 'application/json'
         }
     })
-        .then(response => response.json())
+        .then((response) => response.json())
 
 export const updateCourse = (courseId, course) =>
     fetch(`${COURSES_URL}/${courseId}`, {
