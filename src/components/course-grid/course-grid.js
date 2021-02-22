@@ -7,7 +7,7 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
     <div>
         <div className={'container-fulid wbdv-courselist-title-container'}>
             <div className={'row wbdv-courselist-title'}>
-                <div className="col-10 col-sm-5">Recent Documents</div>
+                <div className="col-8 col-sm-5">Recent Documents</div>
                 <div className="col-sm-4 d-none d-sm-inline">Owned by me</div>
 
                 <div className="col-auto ml-auto float-right">

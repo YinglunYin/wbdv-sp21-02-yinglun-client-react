@@ -81,7 +81,7 @@ export default class CourseManager extends React.Component {
                             <span className="d-none d-lg-inline font-weight-bold">Course Manager</span>
                         </span>
 
-                        <form className="w-75 d-inline">
+                        <div className="w-75 d-inline">
                             <div className="input-group">
                                 <input onChange={(event) => this.setNewCourseTitle(event.target.value)}
                                        value={this.state.newCourseTitle}
@@ -92,7 +92,7 @@ export default class CourseManager extends React.Component {
                                     <i className="fas fa-plus"/>
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </nav>
 
                     <CourseTable
@@ -117,7 +117,7 @@ export default class CourseManager extends React.Component {
                                 className="d-none d-lg-inline font-weight-bold">Course Manager</span>
                         </span>
 
-                        <form className="w-75 d-inline">
+                        <dic className="w-75 d-inline">
                             <div className="input-group">
                                 <input onChange={(event) => this.setNewCourseTitle(event.target.value)}
                                        value={this.state.newCourseTitle}
@@ -128,7 +128,7 @@ export default class CourseManager extends React.Component {
                                     <i className="fas fa-plus"/>
                                 </button>
                             </div>
-                        </form>
+                        </dic>
                     </nav>
 
                     <CourseGrid

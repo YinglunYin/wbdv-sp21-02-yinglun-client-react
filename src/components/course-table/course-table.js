@@ -14,7 +14,7 @@ export default class CourseTable extends React.Component {
             <div>
                 <div className={'container-fulid wbdv-courselist-title-container'}>
                     <div className={'row wbdv-courselist-title'}>
-                        <div className="col-10 col-sm-5">Title</div>
+                        <div className="col-8 col-sm-5">Title</div>
                         <div className="col-sm-2 d-none d-sm-inline">Owner</div>
                         <div className="col-sm-2 d-none d-md-inline">Modified</div>
 
