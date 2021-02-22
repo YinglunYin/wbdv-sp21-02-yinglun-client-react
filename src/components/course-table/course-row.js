@@ -24,7 +24,7 @@ const CourseRow = (
                 title: newTitle
             }
             updateCourse(newCourse)
-        }else{}
+        }else{setNewTitle(course.title)}
     }
 
     return (

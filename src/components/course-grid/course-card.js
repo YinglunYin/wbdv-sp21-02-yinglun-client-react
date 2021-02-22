@@ -14,11 +14,11 @@ const CourseCard = ({course, deleteCourse, updateCourse, key}) => {
                 title: newTitle
             }
             updateCourse(newCourse)
-        }else{}
+        }else{setNewTitle(course.title)}
     }
 
     return (
-        <div className={'col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'}>
+        <div className={'col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-3'}>
             <div className="card">
                 <img src={course.img} className="card-img-top" alt="Card Title Image"/>
                 <div className="card-body">
@@ -28,7 +28,7 @@ const CourseCard = ({course, deleteCourse, updateCourse, key}) => {
                                        value={newTitle}/>}
                     <p className="card-text">{course.description}</p>
                     <Link to={"/courses/editor"} className="btn btn-primary">{course.title}</Link>
-                    <div>
+                    <div className={"float-right"}>
                         {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"/>}
                         {editing && <i onClick={() => saveTitle(true)} className="fas fa-check"/>}
                         {editing && <i onClick={() => saveTitle(false)} className="fas fa-times"/>}
