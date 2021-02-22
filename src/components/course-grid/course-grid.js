@@ -25,14 +25,6 @@ const CourseGrid = ({courses, deleteCourse, updateCourse}) =>
         <div className={'container-fluid'}>
             <div className={'row'}>
                 {
-                    // courses.map((course, ndx) =>
-                    //     <CourseGrid
-                    //         updateCourse={updateCourse}
-                    //         deleteCourse={deleteCourse}
-                    //         key={ndx}
-                    //         course={course}
-                    //         />
-                    // )
                     courses.map(course =>
                                     <CourseCard
                                         key = {course._id}
