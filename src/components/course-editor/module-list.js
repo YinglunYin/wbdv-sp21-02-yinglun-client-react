@@ -22,16 +22,25 @@ const ModuleList = (
         <>
             <div className="container-fluid p-0">
                 {
-                    myModules.map(module =>
-                                      <Link className="list-group-item p-3 font-weight-bold"
-                                            to={`/courses/${flag}/editor/${courseId}/${module._id}`}>
-                                          <EditableItem
-                                              to={`/courses/${flag}/editor/${courseId}/${module._id}`}
-                                              back={`/courses/${flag}/editor/${courseId}`}
-                                              deleteItem={deleteModule}
-                                              updateItem={updateModule}
-                                              item={module}/>
-                                      </Link>
+                    myModules.map(module => {
+
+                        let active = ""
+
+                        if (module._id === moduleId){
+                            active = "active"
+                        }
+                                      return (
+                                          <Link className={`list-group-item p-3 font-weight-bold ${active}`}
+                                                to={`/courses/${flag}/editor/${courseId}/${module._id}`}>
+                                              <EditableItem
+                                                  // to={`/courses/${flag}/editor/${courseId}/${module._id}`}
+                                                  back={`/courses/${flag}/editor/${courseId}`}
+                                                  deleteItem={deleteModule}
+                                                  updateItem={updateModule}
+                                                  item={module}/>
+                                          </Link>
+                                      )
+                                  }
                     )
                 }
                 <div className="list-group-item text-center">

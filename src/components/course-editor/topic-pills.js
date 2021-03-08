@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
 import {Link, useParams} from "react-router-dom";
@@ -13,7 +13,7 @@ const TopicPills = (
         findTopicsForLesson
     }) => {
 
-    const {flag, courseId, moduleId, lessonId} = useParams()
+    const {flag, courseId, moduleId, lessonId, topicId} = useParams()
 
     useEffect(() => {
         if (lessonId !== "undefined" && typeof lessonId !== "undefined") {
@@ -32,22 +32,32 @@ const TopicPills = (
         <div className="row py-3">
             <ul className="nav nav-pills">
                 {
-                    topics.map(topic =>
-                                   <li className="nav-item">
-                                       <Link className="nav-link" to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}>
-                                       <EditableItem
-                                           deleteItem={deleteTopic}
-                                           updateItem={updateTopic}
-                                           to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
-                                           back={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}`}
-                                           item={topic}
-                                       />
-                                       </Link>
-                                   </li>
+                    topics.map(topic => {
+                        let active = ""
+                        let flag = "false"
+
+                        if (topic._id === topicId){
+                            active = "active"
+                        }
+                                   return (
+                                       <li className="nav-item">
+                                           <Link className={`nav-link ${active}`}
+                                                 to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}>
+                                               <EditableItem
+                                                   deleteItem={deleteTopic}
+                                                   updateItem={updateTopic}
+                                                   // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
+                                                   back={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}`}
+                                                   item={topic}
+                                               />
+                                           </Link>
+                                       </li>
+                                   )
+                               }
                     )
                 }
                 <a href="#" className="align-self-center px-3">
-                    <i onClick={()=>createTopic(lessonId)} className="fas fa-plus fa-1x"/>
+                    <i onClick={() => createTopic(lessonId)} className="fas fa-plus fa-1x"/>
                 </a>
             </ul>
         </div>

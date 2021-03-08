@@ -144,11 +144,12 @@ export default class CourseManager extends React.Component {
                 </Route>
 
                 {/* :courseId placeHolder */}
-                <Route path={["/courses/:flag/editor/:courseId/:moduleId/:lessonId",
+                <Route path={["/courses/:flag/editor/:courseId/:moduleId/:lessonId/:topicId",
+                              "/courses/:flag/editor/:courseId/:moduleId/:lessonId",
                               "/courses/:flag/editor/:courseId/:moduleId/",
                               "/courses/:flag/editor/:courseId/",
                               "/courses/:flag/editor/"
-                       ]}
+                ]}
                        render={(props) => {
                            console.log(props)
                            return (<CourseEditor {...props}/>)

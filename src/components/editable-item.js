@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const EditableItem = (
     {
-        to = '/somewhere/to/go',
+        // to = '/somewhere/to/go',
         back = 'somewhere',
         deleteItem = (item) => alert("delete " + item.title),
         updateItem,
@@ -38,9 +38,9 @@ const EditableItem = (
                     <i onClick={() => {
                         setEditing(false)
                         updateItem(cachedItem)
-                    }} className="fas fa-check px-1"/>
+                    }} className="fas fa-check px-1 text-success"/>
 
-                    <Link to={back} className="">
+                    <Link to={back} className="text-danger">
                         <i onClick={() => {
                             setEditing(false)
                             deleteItem(item)

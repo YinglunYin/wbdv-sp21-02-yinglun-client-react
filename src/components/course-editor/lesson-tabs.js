@@ -13,7 +13,7 @@ const LessonTabs = (
         findLessonsForModule,
     }) => {
 
-    const {flag, courseId, moduleId} = useParams()
+    const {flag, courseId, moduleId, lessonId} = useParams()
 
     useEffect(() => {
         if (moduleId !== "undefined" && typeof moduleId !== "undefined") {
@@ -33,19 +33,27 @@ const LessonTabs = (
         <div className="row py-1">
             <ul className="nav nav-tabs col-12">
                 {
-                    lessons.map(lesson =>
-                                    <li className="nav-item font-weight-bold">
-                                        <Link
-                                            className="nav-link"
-                                            to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}>
-                                            <EditableItem
-                                                deleteItem={deleteLesson}
-                                                updateItem={updateLesson}
-                                                to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}
-                                                back={`/courses/${flag}/editor/${courseId}/${moduleId}`}
-                                                item={lesson}/>
-                                        </Link>
-                                    </li>
+                    lessons.map(lesson => {
+                                    let active = ""
+
+                                    if (lesson._id === lessonId) {
+                                        active = "active"
+                                    }
+                                    return (
+                                        <li className="nav-item font-weight-bold">
+                                            <Link
+                                                className={`nav-link ${active}`}
+                                                to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}>
+                                                <EditableItem
+                                                    deleteItem={deleteLesson}
+                                                    updateItem={updateLesson}
+                                                    // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}
+                                                    back={`/courses/${flag}/editor/${courseId}/${moduleId}`}
+                                                    item={lesson}/>
+                                            </Link>
+                                        </li>
+                                    )
+                                }
                     )
                 }
 
