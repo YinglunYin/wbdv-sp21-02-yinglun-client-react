@@ -24,11 +24,11 @@ const ModuleList = (
                 {
                     myModules.map(module => {
 
-                        let active = ""
+                                      let active = ""
 
-                        if (module._id === moduleId){
-                            active = "active"
-                        }
+                                      if (module._id === moduleId) {
+                                          active = "active"
+                                      }
                                       return (
                                           <Link className={`list-group-item p-3 font-weight-bold ${active}`}
                                                 to={`/courses/${flag}/editor/${courseId}/${module._id}`}>

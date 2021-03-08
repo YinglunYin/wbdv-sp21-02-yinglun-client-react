@@ -24,7 +24,7 @@ const NarBar = ({
     }
 
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary d-flex">
                     <span className="navbar-brand">
                         <Link to={`/courses/${back}`} className="btn btn-primary">
                             <i className="fas fa-angle-left fa-1x"/>
@@ -32,6 +32,9 @@ const NarBar = ({
                         <span
                             className="font-weight-bold px-1 align-self-center">{course.title}</span>
                     </span>
+
+            <Link className="text-white d-inline" to="/"><i
+                className="fas fa-home fa-2x"/> </Link>
         </nav>
     )
 }

@@ -3,7 +3,7 @@ import CourseTable from "./course-table/course-table";
 import CourseGrid from "./course-grid/course-grid";
 import CourseEditor from "./course-editor/course-editor";
 import CourseServer from "../services/course-service"
-import {Route} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 
 import './course-manager.css'
 
@@ -72,7 +72,7 @@ export default class CourseManager extends React.Component {
                 {/*Table*/}
                 <Route path={"/courses/table"}>
                     <nav
-                        className="navbar navbar-dark bg-primary sticky-top d-flex justify-content-start">
+                        className="navbar navbar-dark bg-primary sticky-top d-flex">
                         <span className="navbar-brand">
                             <a className="navbar-brand" href="#">
                                 <i className="fas fa-bars"/>
@@ -94,6 +94,9 @@ export default class CourseManager extends React.Component {
                                 </button>
                             </div>
                         </div>
+
+                        <Link className="text-white d-inline" to="/"><i
+                            className="fas fa-home fa-2x"/> </Link>
                     </nav>
 
                     <CourseTable
@@ -109,8 +112,9 @@ export default class CourseManager extends React.Component {
                 {/*Grid*/}
                 <Route path={"/courses/grid"}>
                     <nav
-                        className="navbar navbar-dark bg-primary sticky-top d-flex justify-content-start">
-                        <span className="navbar-brand">
+                        className="navbar navbar-dark bg-primary sticky-top d-flex">
+
+                        <span className="navbar-brand d-inline">
                             <a className="navbar-brand" href="#">
                                 <i className="fas fa-bars"/>
                             </a>
@@ -118,7 +122,7 @@ export default class CourseManager extends React.Component {
                                 className="d-none d-lg-inline font-weight-bold">Course Manager</span>
                         </span>
 
-                        <dic className="w-75 d-inline">
+                        <div className="w-75 d-inline">
                             <div className="input-group">
                                 <input
                                     onChange={(event) => this.setNewCourseTitle(event.target.value)}
@@ -130,7 +134,11 @@ export default class CourseManager extends React.Component {
                                     <i className="fas fa-plus"/>
                                 </button>
                             </div>
-                        </dic>
+                        </div>
+
+                        <Link className="text-white d-inline" to="/"><i
+                            className="fas fa-home fa-2x"/> </Link>
+
                     </nav>
 
                     <CourseGrid
