@@ -2,7 +2,7 @@ import React from 'react'
 import CourseTable from "./course-table/course-table";
 import CourseGrid from "./course-grid/course-grid";
 import CourseEditor from "./course-editor/course-editor";
-import CourseServer from "../services/course.service.client"
+import CourseServer from "../services/course-service"
 import {Route} from 'react-router-dom'
 
 import './course-manager.css'
@@ -17,9 +17,9 @@ export default class CourseManager extends React.Component {
     componentDidMount = () => CourseServer.findAllCourses()
         .then(courses => this.setState({courses}))
 
-    setNewCourseTitle=(newTitle)=>{
+    setNewCourseTitle = (newTitle) => {
         this.setState({
-            newCourseTitle : newTitle
+                          newCourseTitle: newTitle
                       })
         console.log(this.state.newCourseTitle)
     }
@@ -66,7 +66,6 @@ export default class CourseManager extends React.Component {
             })))
     }
 
-
     render() {
         return (
             <div>
@@ -78,15 +77,17 @@ export default class CourseManager extends React.Component {
                             <a className="navbar-brand" href="#">
                                 <i className="fas fa-bars"/>
                             </a>
-                            <span className="d-none d-lg-inline font-weight-bold">Course Manager</span>
+                            <span
+                                className="d-none d-lg-inline font-weight-bold">Course Manager</span>
                         </span>
 
                         <div className="w-75 d-inline">
                             <div className="input-group">
-                                <input onChange={(event) => this.setNewCourseTitle(event.target.value)}
-                                       value={this.state.newCourseTitle}
-                                       className="form-control" type="text"
-                                       placeholder="New Course Title"/>
+                                <input
+                                    onChange={(event) => this.setNewCourseTitle(event.target.value)}
+                                    value={this.state.newCourseTitle}
+                                    className="form-control" type="text"
+                                    placeholder="New Course Title"/>
                                 <button onClick={this.addCourse}
                                         className="btn btn-danger rounded-circle ml-3">
                                     <i className="fas fa-plus"/>
@@ -119,10 +120,11 @@ export default class CourseManager extends React.Component {
 
                         <dic className="w-75 d-inline">
                             <div className="input-group">
-                                <input onChange={(event) => this.setNewCourseTitle(event.target.value)}
-                                       value={this.state.newCourseTitle}
-                                       className="form-control" type="text"
-                                       placeholder="New Course Title"/>
+                                <input
+                                    onChange={(event) => this.setNewCourseTitle(event.target.value)}
+                                    value={this.state.newCourseTitle}
+                                    className="form-control" type="text"
+                                    placeholder="New Course Title"/>
                                 <button onClick={this.addCourse}
                                         className="btn btn-danger rounded-circle ml-3">
                                     <i className="fas fa-plus"/>
@@ -141,7 +143,12 @@ export default class CourseManager extends React.Component {
                 </span>
                 </Route>
 
-                <Route path="/courses/editor"
+                {/* :courseId placeHolder */}
+                <Route path={["/courses/:flag/editor/:courseId/:moduleId/:lessonId",
+                              "/courses/:flag/editor/:courseId/:moduleId/",
+                              "/courses/:flag/editor/:courseId/",
+                              "/courses/:flag/editor/"
+                       ]}
                        render={(props) => {
                            console.log(props)
                            return (<CourseEditor {...props}/>)

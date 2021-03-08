@@ -1,26 +1,31 @@
 .wbdv-editor-module-list{
     padding-bottom: 100%;
-}
-
-.wbdv-editor-list-item{
-    margin: 5px;
-    background: #41474A;
-    color: white;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .wbdv-editor-topic{
     margin: 5px;
 }
 
-.nav-pills .nav-link:not(.active) {
-    background-color: #6B6B6B;
-    color: white;
-    font-weight: bold;
+.text{
+     color: red;
+ }
+
+.text:active {
+    color: green;
 }
 
-.nav-pills .nav-link {
-    background-color: #41474A;
-    color: white;
-    font-weight: bold;
-}
+
+/*.nav-pills .nav-link:not(.active) {*/
+/*    background-color: #6B6B6B;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.nav-pills .nav-link {*/
+/*    background-color: #41474A;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*}*/
 
