@@ -13,7 +13,7 @@ const TopicPills = (
         findTopicsForLesson
     }) => {
 
-    const {flag, courseId, moduleId, lessonId, topicId} = useParams()
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams()
 
     useEffect(() => {
         if (lessonId !== "undefined" && typeof lessonId !== "undefined") {
@@ -42,12 +42,12 @@ const TopicPills = (
                                    return (
                                        <li className="nav-item">
                                            <Link className={`nav-link ${active}`}
-                                                 to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}>
+                                                 to={`/courses/editor/${layout}/${courseId}/${moduleId}/${lessonId}/${topic._id}`}>
                                                <EditableItem
                                                    deleteItem={deleteTopic}
                                                    updateItem={updateTopic}
                                                    // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
-                                                   back={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}`}
+                                                   back={`/courses/editor/${layout}/${courseId}/${moduleId}/${lessonId}`}
                                                    item={topic}
                                                />
                                            </Link>

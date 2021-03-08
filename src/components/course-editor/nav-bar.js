@@ -10,30 +10,23 @@ const NarBar = ({
                     findCourseById
                 }) => {
 
-    const {flag, courseId} = useParams()
+    const {layout, courseId} = useParams()
 
     useEffect(() => {
         findCourseById(courseId)
     }, [])
 
-    let back = ""
-    if (flag === "g") {
-        back = "grid"
-    } else if (flag === "t") {
-        back = "table"
-    }
-
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary d-flex">
-                    <span className="navbar-brand">
-                        <Link to={`/courses/${back}`} className="btn btn-primary">
-                            <i className="fas fa-angle-left fa-1x"/>
-                        </Link>
-                        <span
-                            className="font-weight-bold px-1 align-self-center">{course.title}</span>
-                    </span>
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between">
+            <span className="navbar-brand">
+                <Link to={`/courses/${layout}`} className="btn btn-primary">
+                    <i className="fas fa-angle-left fa-1x"/>
+                </Link>
+                <span
+                    className="font-weight-bold px-1 align-self-center">{course.title}</span>
+            </span>
 
-            <Link className="text-white d-inline" to="/"><i
+            <Link className="text-white d-inline " to="/"><i
                 className="fas fa-home fa-2x"/> </Link>
         </nav>
     )

@@ -152,11 +152,11 @@ export default class CourseManager extends React.Component {
                 </Route>
 
                 {/* :courseId placeHolder */}
-                <Route path={["/courses/:flag/editor/:courseId/:moduleId/:lessonId/:topicId",
-                              "/courses/:flag/editor/:courseId/:moduleId/:lessonId",
-                              "/courses/:flag/editor/:courseId/:moduleId/",
-                              "/courses/:flag/editor/:courseId/",
-                              "/courses/:flag/editor/"
+                <Route path={["/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId",
+                              "/courses/editor/:layout/:courseId/:moduleId/:lessonId",
+                              "/courses/editor/:layout/:courseId/:moduleId/",
+                              "/courses/editor/:layout/:courseId/",
+                              "/courses/editor/:layout"
                 ]}
                        render={(props) => {
                            console.log(props)

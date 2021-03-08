@@ -13,7 +13,7 @@ const LessonTabs = (
         findLessonsForModule,
     }) => {
 
-    const {flag, courseId, moduleId, lessonId} = useParams()
+    const {layout, courseId, moduleId, lessonId} = useParams()
 
     useEffect(() => {
         if (moduleId !== "undefined" && typeof moduleId !== "undefined") {
@@ -43,12 +43,12 @@ const LessonTabs = (
                                         <li className="nav-item font-weight-bold">
                                             <Link
                                                 className={`nav-link ${active}`}
-                                                to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}>
+                                                to={`/courses/editor/${layout}/${courseId}/${moduleId}/${lesson._id}`}>
                                                 <EditableItem
                                                     deleteItem={deleteLesson}
                                                     updateItem={updateLesson}
                                                     // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}
-                                                    back={`/courses/${flag}/editor/${courseId}/${moduleId}`}
+                                                    back={`/courses/editor/${layout}/${courseId}/${moduleId}`}
                                                     item={lesson}/>
                                             </Link>
                                         </li>

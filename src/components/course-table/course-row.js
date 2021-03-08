@@ -32,7 +32,7 @@ const CourseRow = (
             <div className="col-5">
                 {
                     !editing &&
-                    <Link to={`/courses/t/editor/${course._id}`}>
+                    <Link to={`/courses/editor/table/${course._id}`}>
                         {title}
                     </Link>
                 }
