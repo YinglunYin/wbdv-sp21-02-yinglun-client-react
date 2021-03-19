@@ -6,6 +6,7 @@ import CourseServer from "../services/course-service"
 import {Link, Route} from 'react-router-dom'
 
 import './course-manager.css'
+import Widget from "./widgets/widget-list";
 
 export default class CourseManager extends React.Component {
 
@@ -152,16 +153,18 @@ export default class CourseManager extends React.Component {
                 </Route>
 
                 {/* :courseId placeHolder */}
-                <Route path={["/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId",
-                              "/courses/editor/:layout/:courseId/:moduleId/:lessonId",
-                              "/courses/editor/:layout/:courseId/:moduleId/",
-                              "/courses/editor/:layout/:courseId/",
-                              "/courses/editor/:layout"
-                ]}
-                       render={(props) => {
-                           console.log(props)
-                           return (<CourseEditor {...props}/>)
-                       }}>
+                <Route
+                    path={["/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId/:widgetId",
+                           "/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId",
+                           "/courses/editor/:layout/:courseId/:moduleId/:lessonId",
+                           "/courses/editor/:layout/:courseId/:moduleId/",
+                           "/courses/editor/:layout/:courseId/",
+                           "/courses/editor/:layout"
+                    ]}
+                    render={(props) => {
+                        console.log(props)
+                        return (<CourseEditor {...props}/>)
+                    }}>
                 </Route>
 
             </div>

@@ -1,3 +1,5 @@
+import {FIND_COURSE_BY_ID} from "../actions/course_actions";
+
 const initialState = {
     course: {
 
@@ -7,7 +9,7 @@ const initialState = {
 
 const courseReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "FIND_COURSE_BY_ID":
+        case FIND_COURSE_BY_ID:
             return {
                 course: action.course
             }

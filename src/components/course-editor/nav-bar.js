@@ -4,6 +4,7 @@ import EditableItem from "../editable-item";
 import {Link, useParams} from "react-router-dom";
 import courseReducer from "../../reducers/course-reducers";
 import courseService from "../../services/course-service";
+import courseActions from "../../actions/course_actions";
 
 const NarBar = ({
                     course = {},
@@ -17,7 +18,8 @@ const NarBar = ({
     }, [])
 
     return (
-        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between">
+        <nav
+            className="navbar sticky-top navbar-expand-lg navbar-dark bg-primary d-flex justify-content-between">
             <span className="navbar-brand">
                 <Link to={`/courses/${layout}`} className="btn btn-primary">
                     <i className="fas fa-angle-left fa-1x"/>
@@ -41,11 +43,7 @@ const stateToPropsMapper = (state) => {
 const dispatchToPropsMapper = (dispatch) => {
     return {
         findCourseById: (courseId) => {
-            courseService.findCourseById(courseId)
-                .then((theCourse) => dispatch({
-                                                  type: "FIND_COURSE_BY_ID",
-                                                  course: theCourse
-                                              }))
+            courseActions.findCourseById(dispatch, courseId)
         }
     }
 }
