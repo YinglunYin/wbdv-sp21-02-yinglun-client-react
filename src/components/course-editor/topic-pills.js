@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
 import {Link, useParams} from "react-router-dom";
 import topicService from "../../services/topic-service";
+import topicActions from "../../actions/topic-actions";
 
 const TopicPills = (
     {
@@ -73,32 +74,16 @@ const stateToPropsMapper = (state) => {
 const dispatchToPropsMapper = (dispatch) => {
     return {
         findTopicsForLesson: (lessonId) => {
-            topicService.findTopicsForLesson(lessonId)
-                .then((theTopics) => dispatch({
-                                                  type: "FIND_TOPIC_FOR_LESSON",
-                                                  topics: theTopics
-                                              }))
+            topicActions.findTopicsForLesson(dispatch, lessonId)
         },
         createTopic: (lessonId) => {
-            topicService.createTopic(lessonId, {title: "New Topic"})
-                .then((theActualTopic) => dispatch({
-                                                       type: "CREATE_TOPIC",
-                                                       topic: theActualTopic
-                                                   }))
+            topicActions.createTopic(dispatch, lessonId)
         },
         deleteTopic: (item) => {
-            topicService.deleteTopic(item._id)
-                .then(status => dispatch({
-                                             type: "DELETE_TOPIC",
-                                             topicToDelete: item
-                                         }))
+            topicActions.deleteTopic(dispatch, item)
         },
         updateTopic: (topic) => {
-            topicService.updateTopic(topic._id, topic)
-                .then(status => dispatch({
-                                             type: "UPDATE_TOPIC",
-                                             topic: topic
-                                         }))
+            topicActions.updateTopic(dispatch, topic)
         }
 
     }

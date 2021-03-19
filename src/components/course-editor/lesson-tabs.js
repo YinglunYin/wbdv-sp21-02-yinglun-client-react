@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import EditableItem from "../editable-item";
 import {Link, useParams} from "react-router-dom";
 import lessonService from "../../services/lesson-service"
+import lessonActions from "../../actions/lesson-actions";
 
 const LessonTabs = (
     {
@@ -75,32 +76,16 @@ const stateToPropsMapper = (state) => {
 const dispatchToPropsMapper = (dispatch) => {
     return {
         findLessonsForModule: (moduleId) => {
-            lessonService.findLessonsForModule(moduleId)
-                .then((theLessons) => dispatch({
-                                                   type: "FIND_LESSON_FOR_MODULE",
-                                                   lessons: theLessons
-                                               }))
+            lessonActions.findLessonsForModule(dispatch, moduleId)
         },
         createLesson: (moduleId) => {
-            lessonService.createLesson(moduleId, {title: "New Lesson"})
-                .then((theActuallLesson) => dispatch({
-                                                         type: "CREATE_LESSON",
-                                                         lesson: theActuallLesson
-                                                     }))
+            lessonActions.createLesson(dispatch, moduleId)
         },
         deleteLesson: (item) => {
-            lessonService.deleteLesson(item._id)
-                .then(status => dispatch({
-                                             type: "DELETE_LESSON",
-                                             lessonToDelete: item
-                                         }))
+            lessonActions.deleteLesson(dispatch, item)
         },
         updateLesson: (lesson) => {
-            lessonService.updateLesson(lesson._id, lesson)
-                .then(status => dispatch({
-                                             type: "UPDATE_LESSON",
-                                             lesson: lesson
-                                         }))
+            lessonActions.updateLesson(dispatch, lesson)
         }
     }
 }
