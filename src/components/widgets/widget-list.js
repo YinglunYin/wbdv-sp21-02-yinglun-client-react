@@ -51,10 +51,8 @@ const WidgetList = (
                                     widget.type === "PARAGRAPH" &&
                                     <ParagraphWidget
                                         widget={widget}
-                                        to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}
-                                        /lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
-                                        back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}
-                                        /lessons/${lessonId}/topics/${topicId}`}
+                                        to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
+                                        back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}`}
                                         updateWidget={updateWidget}
                                         deleteWidget={deleteWidget}/>
                                 }
