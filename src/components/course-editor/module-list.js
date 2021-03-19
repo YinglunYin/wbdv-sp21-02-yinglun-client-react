@@ -19,6 +19,8 @@ const ModuleList = (
         findModulesForCourse(courseId)
     }, [])
 
+
+
     return (
         <>
             <div className="container-fluid p-0">
@@ -31,7 +33,7 @@ const ModuleList = (
                                           active = "active"
                                       }
                                       return (
-                                          <Link className={`list-group-item p-3 font-weight-bold ${active}`}
+                                          <Link key = {module._id} className={`list-group-item p-3 font-weight-bold ${active}`}
                                                 to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}>
                                               <EditableItem
                                                   // to={`/courses/${flag}/editor/${courseId}/${module._id}`}

@@ -6,7 +6,7 @@ import CourseServer from "../services/course-service"
 import {Link, Route} from 'react-router-dom'
 
 import './course-manager.css'
-import Widget from "./widgets/widget-list";
+import WidgetList from "./widgets/widget-list";
 
 export default class CourseManager extends React.Component {
 

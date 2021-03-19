@@ -1,16 +1,18 @@
 import React from 'react'
 import './editor.style.client.css'
 import {Link, useParams} from "react-router-dom";
-import moduleReducer from '../../reducers/modules-reducers'
-import lessonReducer from '../../reducers/lessons-reducers'
+import moduleReducer from '../../reducers/modules-reducers';
+import lessonReducer from '../../reducers/lessons-reducers';
 import topicReducer from "../../reducers/topic-reducer";
 import courseReducer from "../../reducers/course-reducers";
+import widgetReducer from "../../reducers/widget-reducers"
 import ModuleList from "./module-list";
 import {combineReducers, createStore} from "redux";
 import {Provider} from "react-redux";
 import LessonTabs from "./lesson-tabs";
 import TopicPills from "./topic-pills";
 import NarBar from "./nav-bar";
+import WidgetList from "../widgets/widget-list";
 
 // const store = createStore(moduleReducer)
 // const store = createStore(lessonReducer)
@@ -18,7 +20,8 @@ const reducer = combineReducers({
                                     moduleReducer: moduleReducer,
                                     lessonReducer: lessonReducer,
                                     topicReducer: topicReducer,
-                                    courseReducer: courseReducer
+                                    courseReducer: courseReducer,
+                                    widgetReducer: widgetReducer
                                 })
 
 const store = createStore(reducer)
@@ -42,6 +45,7 @@ const CourseEditor = ({history}) => {
                         <div className="col-9 px-5 py-3">
                             <LessonTabs/>
                             <TopicPills/>
+                            <WidgetList/>
                         </div>
                     </div>
                 </div>

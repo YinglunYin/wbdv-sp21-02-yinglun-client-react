@@ -41,7 +41,7 @@ const TopicPills = (
                             active = "active"
                         }
                                    return (
-                                       <li className="nav-item">
+                                       <li key = {topic._id} className="nav-item">
                                            <Link className={`nav-link ${active}`}
                                                  to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>
                                                <EditableItem

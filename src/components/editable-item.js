@@ -5,7 +5,7 @@ const EditableItem = (
     {
         // to = '/somewhere/to/go',
         back = 'somewhere',
-        deleteItem = (item) => alert("delete " + item.title),
+        deleteItem,
         updateItem,
         item = {title: "Some Title", _id: "Some Id"}
     }) => {

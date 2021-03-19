@@ -41,7 +41,7 @@ const LessonTabs = (
                                         active = "active"
                                     }
                                     return (
-                                        <li className="nav-item font-weight-bold">
+                                        <li key = {lesson._id} className="nav-item font-weight-bold">
                                             <Link
                                                 className={`nav-link ${active}`}
                                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}>
