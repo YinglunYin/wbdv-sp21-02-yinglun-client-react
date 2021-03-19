@@ -27,7 +27,7 @@ const CourseCard = ({course, deleteCourse, updateCourse, key}) => {
                                        onChange={(event) => setNewTitle(event.target.value)}
                                        value={newTitle}/>}
                     <p className="card-text">{course.description}</p>
-                    <Link to={`/courses/editor/grid/${course._id}`} className="btn btn-primary">{course.title}</Link>
+                    <Link to={`/courses/grid/edit/${course._id}`} className="btn btn-primary">{course.title}</Link>
                     <div className={"float-right"}>
                         {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"/>}
                         {editing && <i onClick={() => saveTitle(true)} className="fas fa-check"/>}

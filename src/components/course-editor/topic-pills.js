@@ -43,12 +43,12 @@ const TopicPills = (
                                    return (
                                        <li className="nav-item">
                                            <Link className={`nav-link ${active}`}
-                                                 to={`/courses/editor/${layout}/${courseId}/${moduleId}/${lessonId}/${topic._id}`}>
+                                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}>
                                                <EditableItem
                                                    deleteItem={deleteTopic}
                                                    updateItem={updateTopic}
                                                    // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lessonId}/${topic._id}`}
-                                                   back={`/courses/editor/${layout}/${courseId}/${moduleId}/${lessonId}`}
+                                                   back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}`}
                                                    item={topic}
                                                />
                                            </Link>

@@ -44,12 +44,12 @@ const LessonTabs = (
                                         <li className="nav-item font-weight-bold">
                                             <Link
                                                 className={`nav-link ${active}`}
-                                                to={`/courses/editor/${layout}/${courseId}/${moduleId}/${lesson._id}`}>
+                                                to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}>
                                                 <EditableItem
                                                     deleteItem={deleteLesson}
                                                     updateItem={updateLesson}
                                                     // to={`/courses/${flag}/editor/${courseId}/${moduleId}/${lesson._id}`}
-                                                    back={`/courses/editor/${layout}/${courseId}/${moduleId}`}
+                                                    back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}`}
                                                     item={lesson}/>
                                             </Link>
                                         </li>

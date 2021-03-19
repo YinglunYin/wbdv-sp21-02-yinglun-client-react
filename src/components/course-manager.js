@@ -71,7 +71,7 @@ export default class CourseManager extends React.Component {
         return (
             <div>
                 {/*Table*/}
-                <Route path={"/courses/table"}>
+                <Route exact path={"/courses/table"}>
                     <nav
                         className="navbar navbar-dark bg-primary sticky-top d-flex">
                         <span className="navbar-brand">
@@ -111,7 +111,7 @@ export default class CourseManager extends React.Component {
                 </Route>
 
                 {/*Grid*/}
-                <Route path={"/courses/grid"}>
+                <Route exact path={"/courses/grid"}>
                     <nav
                         className="navbar navbar-dark bg-primary sticky-top d-flex">
 
@@ -154,12 +154,12 @@ export default class CourseManager extends React.Component {
 
                 {/* :courseId placeHolder */}
                 <Route
-                    path={["/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId/:widgetId",
-                           "/courses/editor/:layout/:courseId/:moduleId/:lessonId/:topicId",
-                           "/courses/editor/:layout/:courseId/:moduleId/:lessonId",
-                           "/courses/editor/:layout/:courseId/:moduleId/",
-                           "/courses/editor/:layout/:courseId/",
-                           "/courses/editor/:layout"
+                    path={["/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId/widgets/:widgetId",
+                           "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId",
+                           "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId",
+                           "/courses/:layout/edit/:courseId/modules/:moduleId/",
+                           "/courses/:layout/edit/:courseId/",
+                           "/courses/:layout/edit/"
                     ]}
                     render={(props) => {
                         console.log(props)

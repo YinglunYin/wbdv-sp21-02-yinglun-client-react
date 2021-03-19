@@ -32,10 +32,10 @@ const ModuleList = (
                                       }
                                       return (
                                           <Link className={`list-group-item p-3 font-weight-bold ${active}`}
-                                                to={`/courses/editor/${layout}/${courseId}/${module._id}`}>
+                                                to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}>
                                               <EditableItem
                                                   // to={`/courses/${flag}/editor/${courseId}/${module._id}`}
-                                                  back={`/courses/editor/${layout}/${courseId}`}
+                                                  back={`/courses/${layout}/edit/${courseId}`}
                                                   deleteItem={deleteModule}
                                                   updateItem={updateModule}
                                                   item={module}/>
