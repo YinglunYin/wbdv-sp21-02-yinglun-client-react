@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db958111-1ff8-49eb-964c-5e69871df901" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1oasJnwnJGCRRrAhbcr7U1EEREY" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/react-exam/exam" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/counter/redux-state" />
+      <recent name="$PROJECT_DIR$/src/components/course-editor" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/course-editor" />
+      <recent name="$PROJECT_DIR$/src/components/course-grid" />
+      <recent name="$PROJECT_DIR$/src/components/course-table" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="es6.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/es6/es6.js" working-dir="$PROJECT_DIR$/src/es6">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.es6.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db958111-1ff8-49eb-964c-5e69871df901" name="Default Changelist" comment="" />
+      <created>1613535966367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613535966367</updated>
+      <workItem from="1613535968780" duration="15571000" />
+      <workItem from="1613925282034" duration="18594000" />
+      <workItem from="1613974636570" duration="1569000" />
+      <workItem from="1614664324241" duration="7887000" />
+      <workItem from="1615040264029" duration="9322000" />
+      <workItem from="1615085700350" duration="36073000" />
+      <workItem from="1615189731483" duration="5176000" />
+      <workItem from="1615807340104" duration="284000" />
+      <workItem from="1615949826840" duration="1883000" />
+      <workItem from="1616064804999" duration="6723000" />
+      <workItem from="1616136217553" duration="382000" />
+      <workItem from="1616137308758" duration="15563000" />
+    </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1613931600375</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613931600375</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <created>1613932268222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613932268222</updated>
+    </task>
+    <task id="LOCAL-00003" summary="2">
+      <created>1613973408068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613973408068</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Assignment 3">
+      <created>1613973963285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613973963285</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Assignment 3">
+      <created>1613974309401</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613974309401</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Assignment 3 Finish">
+      <created>1613974340996</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613974340996</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Assignment 3 Finish">
+      <created>1613974683515</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1613974683515</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Assignment 3 Finish">
+      <created>1613977715175</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1613977715175</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Assignment 4">
+      <created>1615178849194</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615178849194</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Assignment 4 bug fixed">
+      <created>1615187821167</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615187821167</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Assignment 4 bug fixed">
+      <created>1615189010214</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615189010214</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Assignment 4 bug fixed 1">
+      <created>1615197948548</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615197948548</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Split Actions from components">
+      <created>1616131809596</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616131809596</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Split Actions from components">
+      <created>1616132264477</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616132264477</updated>
+    </task>
+    <task id="LOCAL-00015" summary="rewrite url">
+      <created>1616133321240</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616133321240</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Assignment5 Finished">
+      <created>1616164660911</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616164660911</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Assignment5 Finished">
+      <created>1616165001267</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1616165001267</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <MESSAGE value="2" />
+    <MESSAGE value="Assignment 3" />
+    <MESSAGE value="Assignment 3 Finish" />
+    <MESSAGE value="Assignment 4" />
+    <MESSAGE value="Assignment 4 bug fixed" />
+    <MESSAGE value="Assignment 4 bug fixed 1" />
+    <MESSAGE value="Split Actions from components" />
+    <MESSAGE value="rewrite url" />
+    <MESSAGE value="Assignment5 Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment5 Finished" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/course-editor/course-editor.js</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
