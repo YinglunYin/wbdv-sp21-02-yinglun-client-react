@@ -21,19 +21,19 @@ const WidgetList = (
 
     const [topicFlag, setTopicFlag] = useState(false)
 
-    // useEffect(() => {
-    //     if(topicId !== "undefined" && typeof topicId !== "undefined" ){
-    //         findWidgetForTopic(topicId)
-    //         setTopicFlag(true)
-    //     }else{
-    //         setTopicFlag(false)
-    //     }
-    // }, [topicId])
-
     useEffect(() => {
-        findAllWidgets()
-        setTopicFlag(true)
-    }, [])
+        if(topicId !== "undefined" && typeof topicId !== "undefined" ){
+            findWidgetForTopic(topicId)
+            setTopicFlag(true)
+        }else{
+            setTopicFlag(false)
+        }
+    }, [topicId])
+
+    // useEffect(() => {
+    //     findAllWidgets()
+    //     setTopicFlag(true)
+    // }, [])
 
     return (
         topicFlag &&
