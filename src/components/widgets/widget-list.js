@@ -4,6 +4,8 @@ import ParagraphWidget from "./paragraph-widget";
 import {connect} from 'react-redux'
 import HeadingWidget from "./heading-widget";
 import widgetActions from "../../actions/widget-actions";
+import ListWidget from "./list-widget";
+import ImageWidget from "./image-widget";
 
 const WidgetList = (
     {
@@ -19,14 +21,19 @@ const WidgetList = (
 
     const [topicFlag, setTopicFlag] = useState(false)
 
+    // useEffect(() => {
+    //     if(topicId !== "undefined" && typeof topicId !== "undefined" ){
+    //         findWidgetForTopic(topicId)
+    //         setTopicFlag(true)
+    //     }else{
+    //         setTopicFlag(false)
+    //     }
+    // }, [topicId])
+
     useEffect(() => {
-        if(topicId !== "undefined" && typeof topicId !== "undefined" ){
-            findWidgetForTopic(topicId)
-            setTopicFlag(true)
-        }else{
-            setTopicFlag(false)
-        }
-    }, [topicId])
+        findAllWidgets()
+        setTopicFlag(true)
+    }, [])
 
     return (
         topicFlag &&
@@ -50,6 +57,24 @@ const WidgetList = (
                                 {
                                     widget.type === "PARAGRAPH" &&
                                     <ParagraphWidget
+                                        widget={widget}
+                                        to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
+                                        back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}`}
+                                        updateWidget={updateWidget}
+                                        deleteWidget={deleteWidget}/>
+                                }
+                                {
+                                    widget.type === "LIST" &&
+                                    <ListWidget
+                                        widget={widget}
+                                        to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
+                                        back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}`}
+                                        updateWidget={updateWidget}
+                                        deleteWidget={deleteWidget}/>
+                                }
+                                {
+                                    widget.type === "IMAGE" &&
+                                    <ImageWidget
                                         widget={widget}
                                         to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}/widgets/${widget._id}`}
                                         back={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topicId}`}

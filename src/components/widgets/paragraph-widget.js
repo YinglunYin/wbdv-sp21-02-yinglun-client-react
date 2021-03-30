@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 
-const ParagraphWidget =(
+const ParagraphWidget = (
     {
         widget,
         to,
@@ -9,11 +9,11 @@ const ParagraphWidget =(
         deleteWidget,
         updateWidget
     }
-) =>{
+) => {
     const [editing, setEditing] = useState(false)
     const [cachedWidget, setCachedWidget] = useState(widget)
 
-    return(
+    return (
         <div>
             {
                 !editing &&
@@ -43,13 +43,21 @@ const ParagraphWidget =(
                                 }
                             )
                         }
-                                className="form-control">
-                            {widget.type === "HEADING" ? <option value="HEADING" selected>Heading</option>
+                                className="form-control"
+                        >
+                            {widget.type === "HEADING" ? <option value="HEADING"
+                                                                 selected>Heading</option>
                                                        : <option value="HEADING">Heading</option>}
-                            {widget.type === "PARAGRAPH" ? <option value="PARAGRAPH" selected>Paragraph</option>
-                                                         : <option value="PARAGRAPH">Paragraph</option>}
+                            {widget.type === "PARAGRAPH" ? <option value="PARAGRAPH"
+                                                                   selected>Paragraph</option>
+                                                         : <option
+                                 value="PARAGRAPH">Paragraph</option>}
+                            {widget.type === "LIST" ? <option value="LIST" selected>List</option>
+                                                    : <option value="LIST">List</option>}
+                            {widget.type === "IMAGE" ? <option value="IMAGE" selected>Image</option>
+                                                     : <option value="IMAGE">Image</option>}
                         </select>
-
+                        <br/>
                         <textarea
                             value={cachedWidget.text}
                             className="form-control"

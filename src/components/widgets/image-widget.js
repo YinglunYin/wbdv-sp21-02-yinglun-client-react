@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 
-const HeadingWidget = (
+const ImageWidget = (
     {
         widget,
         to,
@@ -19,13 +19,9 @@ const HeadingWidget = (
                 !editing &&
                 <div className="row">
                     <div className="col-11">
-                        {widget.size === 1 && <h1>{widget.text}</h1>}
-                        {widget.size === 2 && <h2>{widget.text}</h2>}
-                        {widget.size === 3 && <h3>{widget.text}</h3>}
-                        {widget.size === 4 && <h4>{widget.text}</h4>}
-                        {widget.size === 5 && <h5>{widget.text}</h5>}
-                        {widget.size === 6 && <h6>{widget.text}</h6>}
+                        <img width={widget.width} height={widget.height} src={widget.src}/>
                     </div>
+
                     <Link to={to} className="col-1">
                         <i onClick={() => {
                             setEditing(true)
@@ -38,6 +34,7 @@ const HeadingWidget = (
                 editing &&
                 <div className="row">
                     <div className="col-10">
+
                         <select onChange={(e) =>
                             setCachedWidget(
                                 {
@@ -60,42 +57,46 @@ const HeadingWidget = (
                             {widget.type === "IMAGE" ? <option value="IMAGE" selected>Image</option>
                                                      : <option value="IMAGE">Image</option>}
                         </select>
+
                         <br/>
+
+                        <p>Image URL</p>
                         <input
                             onChange={(e) =>
                                 setCachedWidget(
                                     {
                                         ...cachedWidget,
-                                        text: e.target.value
+                                        src: e.target.value
                                     }
                                 )
                             }
                             className="form-control"
-                            value={cachedWidget.text}/>
+                            value={cachedWidget.src}/>
+                        <p>Image width</p>
+                        <input
+                            onChange={(e) =>
+                                setCachedWidget(
+                                    {
+                                        ...cachedWidget,
+                                        width: e.target.value
+                                    }
+                                )
+                            }
+                            className="form-control"
+                            value={cachedWidget.width}/>
+                        <p>Image height</p>
+                        <input
+                            onChange={(e) =>
+                                setCachedWidget(
+                                    {
+                                        ...cachedWidget,
+                                        height: e.target.value
+                                    }
+                                )
+                            }
+                            className="form-control"
+                            value={cachedWidget.height}/>
 
-                        <select onChange={(e) =>
-                            setCachedWidget(
-                                {
-                                    ...cachedWidget,
-                                    size: parseInt(e.target.value)
-                                }
-                            )
-                        }
-                                className="form-control"
-                        >
-                            {widget.size === 1 ? <option value={1} selected>Heading 1</option>
-                                               : <option value={1}>Heading 1</option>}
-                            {widget.size === 2 ? <option value={2} selected>Heading 2</option>
-                                               : <option value={2}>Heading 2</option>}
-                            {widget.size === 3 ? <option value={3} selected>Heading 3</option>
-                                               : <option value={3}>Heading 3</option>}
-                            {widget.size === 4 ? <option value={4} selected>Heading 4</option>
-                                               : <option value={4}>Heading 4</option>}
-                            {widget.size === 5 ? <option value={5} selected>Heading 5</option>
-                                               : <option value={5}>Heading 5</option>}
-                            {widget.size === 6 ? <option value={6} selected>Heading 6</option>
-                                               : <option value={6}>Heading 6</option>}
-                        </select>
                     </div>
                     <div className="col-2">
                         <i onClick={() => {
@@ -103,11 +104,11 @@ const HeadingWidget = (
                             updateWidget(cachedWidget)
                         }} className="fas fa-check px-1 text-success float-right"/>
 
-                        <Link to={back} className="text-danger">
+                        <Link to={back} className="text-danger float-right">
                             <i onClick={() => {
                                 setEditing(false)
                                 deleteWidget(widget)
-                            }} className="fas fa-times float-right"/>
+                            }} className="fas fa-times"/>
                         </Link>
                     </div>
                 </div>
@@ -116,4 +117,4 @@ const HeadingWidget = (
     )
 }
 
-export default HeadingWidget
+export default ImageWidget
