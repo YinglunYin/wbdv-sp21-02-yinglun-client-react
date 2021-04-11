@@ -7,6 +7,8 @@ import {Link, Route} from 'react-router-dom'
 
 import './course-manager.css'
 import WidgetList from "./widgets/widget-list";
+import Quizzes from "./quizzes/quizzes";
+import Quiz from "./quizzes/quiz";
 
 export default class CourseManager extends React.Component {
 
@@ -165,6 +167,22 @@ export default class CourseManager extends React.Component {
                         console.log(props)
                         return (<CourseEditor {...props}/>)
                     }}>
+                </Route>
+
+                <Route
+                    exact
+                    path={[
+                        "/courses/:courseId/quizzes",
+                    ]}>
+                    <Quizzes/>
+                </Route>
+
+                <Route
+                    exact
+                    path={[
+                        "/courses/:courseId/quizzes/:quizId"
+                    ]}>
+                    <Quiz/>
                 </Route>
 
             </div>

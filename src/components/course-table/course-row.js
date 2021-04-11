@@ -8,6 +8,7 @@ const CourseRow = (
         updateCourse,
         course,
         lastModified,
+        quizzes,
         title,
         owner
     }
@@ -45,7 +46,8 @@ const CourseRow = (
                 }
             </div>
             <div className="col-sm-2 d-none d-sm-inline">{owner}</div>
-            <div className="col-sm-4 d-none d-md-inline">{lastModified}</div>
+            <div className="col-sm-2 d-none d-md-inline">{lastModified}</div>
+            <div className="col-sm-2 d-none d-md-inline"><Link to={`/courses/${course._id}/quizzes`}>Quizzes</Link></div>
             <div className="col-auto ml-auto float-right">
                 <i onClick={() => deleteCourse(course)} className="fas fa-trash"/>
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"/>}

@@ -6,6 +6,7 @@ import Home from './components/home'
 function App() {
     return (
         // eslint-disable-next-line react/jsx-no-undef
+
         <BrowserRouter>
             <div>
                 <Route path='/courses'>
