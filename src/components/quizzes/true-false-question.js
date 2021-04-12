@@ -1,19 +1,25 @@
 import React, {useState} from 'react';
+import Question from "./question";
 
-const TrueFalseQuestion = ({question}) => {
+const TrueFalseQuestion = ({
+                               question,
+                               setAnswer,
+                               hasSubmitted
+                           }) => {
+
     const [yourAnswer, setYourAnswer] = useState('');
-    const [isGrade, setIsGrade] = useState(false);
+    // const [hasSubmitted, setIsGrade] = useState(false);
 
     return (
         <div>
             <h5>
                 {question.question}
                 {
-                    (isGrade && question.correct === yourAnswer) &&
+                    (hasSubmitted && question.correct === yourAnswer) &&
                     <i className="fas fa-check float-right wbdv-true-icon"/>
                 }
                 {
-                    (isGrade && question.correct !== yourAnswer) &&
+                    (hasSubmitted && question.correct !== yourAnswer) &&
                     <i className="fas fa-times float-right wbdv-false-icon"/>
                 }
 
@@ -22,7 +28,7 @@ const TrueFalseQuestion = ({question}) => {
 
                 <li className={
                     (() => {
-                        if (!isGrade || (yourAnswer === question.correct && yourAnswer
+                        if (!hasSubmitted || (yourAnswer === question.correct && yourAnswer
                                          === 'false')) {
                             return 'list-group-item'
                         } else if (question.correct === 'true') {
@@ -38,15 +44,17 @@ const TrueFalseQuestion = ({question}) => {
                                className=''
                                onClick={() => {
                                    setYourAnswer('true')
+                                   question.answer = 'true'
+                                   setAnswer(question)
                                }}
                                name={question._id}
                                checked={yourAnswer === 'true'}
-                               disabled={isGrade}
+                               disabled={hasSubmitted}
                         />
                         TRUE
                         {
                             (() => {
-                                if (!isGrade || (yourAnswer === question.correct && yourAnswer
+                                if (!hasSubmitted || (yourAnswer === question.correct && yourAnswer
                                                  === 'false')) {
                                     return ""
                                 } else if (question.correct === 'true') {
@@ -64,7 +72,7 @@ const TrueFalseQuestion = ({question}) => {
 
                 <li className={
                     (() => {
-                        if (!isGrade || (yourAnswer === question.correct && yourAnswer
+                        if (!hasSubmitted || (yourAnswer === question.correct && yourAnswer
                                          === 'true')) {
                             return 'list-group-item'
                         } else if (question.correct === 'false') {
@@ -80,14 +88,16 @@ const TrueFalseQuestion = ({question}) => {
                                className=''
                                onClick={() => {
                                    setYourAnswer('false')
+                                   question.answer = 'false'
+                                   setAnswer(question)
                                }}
                                name={question._id}
                                checked={yourAnswer === 'false'}
-                               disabled={isGrade}
+                               disabled={hasSubmitted}
                         />FALSE
                         {
                             (() => {
-                                if (!isGrade || (yourAnswer === question.correct && yourAnswer
+                                if (!hasSubmitted || (yourAnswer === question.correct && yourAnswer
                                                  === 'true')) {
                                     return ""
                                 } else if (question.correct === 'false') {
@@ -109,26 +119,26 @@ const TrueFalseQuestion = ({question}) => {
                 Your answer: {yourAnswer}
             </p>
 
-            <button type="button"
-                    className="btn btn-success"
-                    onClick={() => {
-                        if (yourAnswer === '') {
-                            alert('Please choose an answer before grading！')
-                        } else {
-                            setIsGrade(true)
-                        }
-                    }}
-            >
-                Grade
-            </button>
-            <button type="button"
-                    className="btn btn-primary ml-4"
-                    onClick={() => {
-                        setIsGrade(false)
-                    }}
-            >
-                Cancel
-            </button>
+            {/*<button type="button"*/}
+            {/*        className="btn btn-success"*/}
+            {/*        onClick={() => {*/}
+            {/*            if (yourAnswer === '') {*/}
+            {/*                alert('Please choose an answer before grading！')*/}
+            {/*            } else {*/}
+            {/*                setIsGrade(true)*/}
+            {/*            }*/}
+            {/*        }}*/}
+            {/*>*/}
+            {/*    Grade*/}
+            {/*</button>*/}
+            {/*<button type="button"*/}
+            {/*        className="btn btn-primary ml-4"*/}
+            {/*        onClick={() => {*/}
+            {/*            setIsGrade(false)*/}
+            {/*        }}*/}
+            {/*>*/}
+            {/*    Cancel*/}
+            {/*</button>*/}
             <hr/>
 
         </div>

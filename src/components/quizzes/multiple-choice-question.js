@@ -1,7 +1,11 @@
 import React, {useState} from "react";
 
-const MultipleChoiceQuestion = ({question}) => {
-    const [isGrade, setIsGrade] = useState(false);
+const MultipleChoiceQuestion = ({
+                                    question,
+                                    setAnswer,
+                                    hasSubmitted
+                                }) => {
+    // const [hasSubmitted, setIsGrade] = useState(false);
     const [yourAnswer, setYourAnswer] = useState("")
 
     return (
@@ -9,11 +13,11 @@ const MultipleChoiceQuestion = ({question}) => {
             <h5>
                 {question.question}
                 {
-                    isGrade && question.correct === yourAnswer &&
+                    hasSubmitted && question.correct === yourAnswer &&
                     <i className="fas fa-check float-right wbdv-true-icon"/>
                 }
                 {
-                    isGrade && question.correct !== yourAnswer &&
+                    hasSubmitted && question.correct !== yourAnswer &&
                     <i className="fas fa-times float-right wbdv-false-icon"/>
                 }
             </h5>
@@ -24,9 +28,9 @@ const MultipleChoiceQuestion = ({question}) => {
                             <li
                                 className={
                                     (() => {
-                                        if (isGrade && question.correct === choice) {
+                                        if (hasSubmitted && question.correct === choice) {
                                             return 'list-group-item list-group-item-success'
-                                        } else if (isGrade && yourAnswer !== question.correct
+                                        } else if (hasSubmitted && yourAnswer !== question.correct
                                                    && yourAnswer === choice) {
                                             return 'list-group-item list-group-item-danger'
                                         } else {
@@ -38,20 +42,22 @@ const MultipleChoiceQuestion = ({question}) => {
                                 <label><input
                                     onClick={() => {
                                         setYourAnswer(choice)
+                                        question.answer = choice
+                                        setAnswer(question)
                                     }}
                                     type="radio"
                                     name={question._id}
                                     checked={yourAnswer === choice}
-                                    disabled={isGrade}
+                                    disabled={hasSubmitted}
                                 />
                                     {choice}
 
                                     {
                                         (() => {
-                                            if (isGrade && question.correct === choice) {
+                                            if (hasSubmitted && question.correct === choice) {
                                                 return (
                                                     <i className="fas fa-check float-right wbdv-true-icon"/>)
-                                            } else if (isGrade && yourAnswer !== question.correct
+                                            } else if (hasSubmitted && yourAnswer !== question.correct
                                                        && yourAnswer === choice) {
                                                 return (
                                                     <i className="fas fa-times float-right wbdv-false-icon"/>)
@@ -71,26 +77,26 @@ const MultipleChoiceQuestion = ({question}) => {
                 Your answer: {yourAnswer}
             </p>
 
-            <button type="button"
-                    className="btn btn-success"
-                    onClick={() => {
-                        if (yourAnswer === '') {
-                            alert('Please choose an answer before grading！')
-                        } else {
-                            setIsGrade(true)
-                        }
-                    }}
-            >
-                Grade
-            </button>
-            <button type="button"
-                    className="btn btn-primary ml-4"
-                    onClick={() => {
-                        setIsGrade(false)
-                    }}
-            >
-                Cancel
-            </button>
+            {/*<button type="button"*/}
+            {/*        className="btn btn-success"*/}
+            {/*        onClick={() => {*/}
+            {/*            if (yourAnswer === '') {*/}
+            {/*                alert('Please choose an answer before grading！')*/}
+            {/*            } else {*/}
+            {/*                setIsGrade(true)*/}
+            {/*            }*/}
+            {/*        }}*/}
+            {/*>*/}
+            {/*    Grade*/}
+            {/*</button>*/}
+            {/*<button type="button"*/}
+            {/*        className="btn btn-primary ml-4"*/}
+            {/*        onClick={() => {*/}
+            {/*            setIsGrade(false)*/}
+            {/*        }}*/}
+            {/*>*/}
+            {/*    Cancel*/}
+            {/*</button>*/}
         </div>
     )
 }
